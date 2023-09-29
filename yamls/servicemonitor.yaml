@@ -4,11 +4,11 @@ metadata:
   labels:
     release: prometheus
   namespace: prom
-  name: exporter-servicemonitor
+  name: example-app
 spec:
   endpoints:
     - interval: 10s
       port: web
   selector:
     matchLabels:
-      app: prom
+      app: example-app

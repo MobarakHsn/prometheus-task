@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: all-permissions-binding
+  namespace: prom
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: prom
+roleRef:
+  kind: ClusterRole
+  name: all-permissions
+  apiGroup: rbac.authorization.k8s.io

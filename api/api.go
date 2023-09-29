@@ -21,6 +21,7 @@ func ping(w http.ResponseWriter, req *http.Request) {
 
 func StartServer(port string) {
 	port = ":" + port
+	fmt.Println("Server started at port ", port)
 	prometheus.MustRegister(pingCounter)
 	http.HandleFunc("/ping", ping)
 	http.Handle("/metrics", promhttp.Handler())
